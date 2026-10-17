@@ -1,0 +1,14 @@
+{
+    "name": "dynamic_platform_lighting_fork",
+    "version": "0.1.0",
+    "title": "Dynamic Platform Lighting(fork)",
+    "author": "ArkadiPorovozov",
+    "dependencies": [
+        "base >= 2.1",
+        "space-age"
+    ],
+    "description": "Dynamically adjusts platform lighting based on solar power, orbital connections, and the platform’s current location",
+    "factorio_version": "2.1",
+    "space_travel_required": true,
+    "spoiling_required": true
+}

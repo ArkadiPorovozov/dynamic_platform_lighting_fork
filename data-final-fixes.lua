@@ -1,0 +1,1 @@
+require("platform_lighting").apply()
