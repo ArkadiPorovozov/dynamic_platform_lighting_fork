@@ -15,4 +15,13 @@ data.extend({
 		default_value = true,
 		order = "dynamic_platform_lighting_b",
 	},
+	{
+		type = "int-setting",
+		name = "dynamic_platform_min_light",
+		setting_type = "runtime-global",
+		minimum_value = 0,
+		default_value = 30,
+		maximum_value = 100,
+		order = "dynamic_platform_lighting_c",
+	},
 })

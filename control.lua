@@ -1,4 +1,4 @@
-local function update_platform(surface)
+local function update_platform(surface, min_light)
 	if not surface.platform then
 		return
 	end
@@ -30,7 +30,8 @@ local function update_platform(surface)
 	local normalized = (solar - min_s) / (max_s - min_s)
 	normalized = math.min(math.max(normalized, 0), 1)
 
-	surface.daytime = 0.99 + normalized * 0.01
+	local lit = min_light + (1 - min_light) * normalized
+	surface.daytime = 0.99 + lit * 0.01
 end
 
 local function ensure_storage()
@@ -89,9 +90,10 @@ script.on_event(defines.events.on_tick, function(event)
 		return
 	end
 	ensure_storage()
+	local min_light = settings.global["dynamic_platform_min_light"].value / 100
 	for _, surface in pairs(game.surfaces) do
 		if surface.platform then
-			update_platform(surface)
+			update_platform(surface, min_light)
 		end
 	end
 end)
